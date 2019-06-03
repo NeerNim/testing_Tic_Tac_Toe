@@ -10,8 +10,7 @@ class Game
   def initialize(board, player1, player2)
     @new_board = board
     @player1 = player1
-    @player2 = player2
-    play
+    @player2 = player2    
   end
 
   def play
@@ -24,7 +23,7 @@ class Game
     end
   end
 
-  private
+#  private
 
   def playing(player, board)
     cell = choose_num(board)
