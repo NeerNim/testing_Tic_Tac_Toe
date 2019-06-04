@@ -2,7 +2,7 @@ require './lib/board'
 
 describe "Board Class" do
   board = Board.new
-  
+
   it "should have board class" do  
     expect(board.class).to eql(Board)
   end

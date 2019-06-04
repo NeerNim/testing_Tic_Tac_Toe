@@ -3,6 +3,7 @@ require './lib/board'
 require './lib/player'
 
 describe "#has_won?" do
+
   board = Board.new
   player1 = Player.new('X')
   player2 = Player.new('O')
@@ -17,7 +18,7 @@ describe "#has_won?" do
 
     describe "#is_finished" do 
       it "should return true if there is a winner" do
-      expect(game.is_finished?(board)).to eql(true)
+      expect(game.game_is_over).to eql(true)
     end
   end
 end
