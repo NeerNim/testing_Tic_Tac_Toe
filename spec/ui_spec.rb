@@ -1,7 +1,8 @@
 require './lib/board.rb'
 include UI
 
-RSpec.describe UI do
+describe UI do
+     let(:board){ Board.new }
   
   describe "#decide_other_sign" do
     it "takes the sign and returns the other one" do
@@ -18,12 +19,20 @@ RSpec.describe UI do
   end
 
   describe "#choose_num" do
-  it "returns the chosen cell if only its available" do
-    board = Board.new
-    board.update_board(3, "X")
-    stub(:gets) {"2"}
-    expect(choose_num(board)).to eql("2")
+    it "returns the chosen cell if only its available" do
+      board.update_board(3, "X")
+      stub(:gets) {"2"}
+      expect(choose_num(board)).to eql("2")
+    end
   end
-end
+
+  describe "#choose_sign" do
+
+    it "should return X or O when user selects one of the sign" do
+      stub(:gets) { "X" }
+      expect(choose_sign).to eql("X")
+    end
+
+  end
 
 end
