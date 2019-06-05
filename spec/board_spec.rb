@@ -1,7 +1,7 @@
 require './lib/board'
 
 describe "Board Class" do
-  board = Board.new
+  let(:board) {Board.new}
 
   it "should have board class" do  
     expect(board.class).to eql(Board)
@@ -13,7 +13,11 @@ describe "Board Class" do
     end
   end 
 
-  describe "#not_full?" do     
+  describe "#is_full?" do     
+    
+    
+    it "should check all the board is full and return false" do
+    board.update_board(1, "X")
     board.update_board(2, "X")
     board.update_board(3, "X")
     board.update_board(4, "X")
@@ -22,14 +26,12 @@ describe "Board Class" do
     board.update_board(7, "X")
     board.update_board(8, "X")
     board.update_board(9, "X")
-    
-    it "should check all the board is full and return false" do
-      expect(board.not_full?).to eql(false)
+      expect(board.is_full?).to eql(true)
     end
 
     it "should check whether the board is empty" do
       board = Board.new
-      expect(board.not_full?).to eql(true)
+      expect(board.is_full?).to eql(false)
     end
   end 
 
@@ -47,6 +49,7 @@ describe "Board Class" do
   describe "#check_winner" do
     it "should check the consecutive signs and return true or false " do
       board.update_board(1, "X")
+      board.update_board(2, "X")
       board.update_board(3, "X")
       expect(board.check_winner("X")).to eql(true)
     end
