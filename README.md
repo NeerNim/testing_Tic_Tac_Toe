@@ -12,7 +12,7 @@ rspec 3.8
   - rspec-support 3.8.0 
 ```
 
-# Live Version of Command Line TicTacToe Game in a Github Repository
+# TicTacToe Game live version
 [TicTAcToe Game](https://github.com/YemreAybey/TicTAcToe) 
 
 ## Authors
