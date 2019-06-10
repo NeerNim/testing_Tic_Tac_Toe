@@ -12,24 +12,23 @@ describe UI do
 
 
   describe "#play_again" do
+  before { allow_any_instance_of(Kernel).to receive(:gets).and_return("N") }
     it "takes an answer as Y or N and returns it" do
-      stub(:gets) {"N"}
       expect(play_again?).to eql('N')
     end
   end
 
   describe "#choose_num" do
+  before { allow_any_instance_of(Kernel).to receive(:gets).and_return("2") }
     it "returns the chosen cell if only its available" do
       board.update_board(3, "X")
-      stub(:gets) {"2"}
       expect(choose_num(board)).to eql("2")
     end
   end
 
   describe "#choose_sign" do
-
+  before { allow_any_instance_of(Kernel).to receive(:gets).and_return("X") }
     it "should return X or O when user selects one of the sign" do
-      stub(:gets) { "X" }
       expect(choose_sign).to eql("X")
     end
 

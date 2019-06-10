@@ -11,6 +11,7 @@ describe "Board Class" do
     it "should change the board cell number to character" do
       expect(board.update_board(1, "X")).to eql(board.board[0])
     end
+
   end 
 
   describe "#is_full?" do     
