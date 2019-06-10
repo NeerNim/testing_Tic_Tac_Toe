@@ -12,6 +12,9 @@ rspec 3.8
   - rspec-support 3.8.0 
 ```
 
+# Live Version of Command Line TicTacToe Game in a Github Repository
+[TicTAcToe Game](https://github.com/YemreAybey/TicTAcToe) 
+
 ## Authors
 * **Yunus Emre Aybey** - [YemreAybey](https://github.com/YemreAybey)
 * **Neer Thapa** - [NeerNim](https://github.com/NeerNim)
