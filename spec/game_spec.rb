@@ -8,6 +8,12 @@ describe "Game Class" do
   let(:player2) {Player.new('O')}
   let(:game) {Game.new(board, player1, player2)}
 
+  describe "#play" do
+    before { allow_any_instance_of(Game).to receive(:game_is_over?).and_return(true) }
+      it "should let the player to play the game unless it is over" do
+      expect(game.play).to eql(nil)
+    end
+  end
 
   describe "#has_won?" do
 

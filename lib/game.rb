@@ -22,7 +22,7 @@ class Game
     end
   end
 
-  private
+  #private
 
   def has_won?(player)
     @new_board.check_winner(player.sign)

@@ -1,4 +1,6 @@
 require './lib/board.rb'
+require './lib/game.rb'
+require './lib/player.rb'
 include UI
 
 describe UI do
@@ -27,11 +29,23 @@ describe UI do
   end
 
   describe "#choose_sign" do
-  before { allow_any_instance_of(Kernel).to receive(:gets).and_return("X") }
+    before { allow_any_instance_of(Kernel).to receive(:gets).and_return("X") }
     it "should return X or O when user selects one of the sign" do
       expect(choose_sign).to eql("X")
     end
-
   end
+
+  describe "#show_board" do
+    it "should return X or O when user selects one of the sign" do
+      expect { show_board(board) }.to output.to_stdout 
+    end
+
+    it "should show the change in the board" do
+      board.update_board(2, "X")
+      expect { show_board(board) }.to output.to_stdout 
+    end
+  end
+
+
 
 end
